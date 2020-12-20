@@ -1,95 +1,65 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 
-interface CardProps {
-  total?: boolean;
+interface Product {
+  id: string;
+  title: string;
+  image_url: string;
+  price: number;
 }
 
-export const Container = styled.div`
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 40px 20px;
+export const Container = styled.SafeAreaView`
+  flex: 1;
+  align-items: center;
 `;
 
-export const Title = styled.h1`
-  font-size: 48px;
-  color: #3a3a3a;
-`;
-
-export const CardContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 32px;
-  margin-top: -150px;
-`;
-
-export const Card = styled.div`
-  background: ${({ total }: CardProps): string => (total ? '#FF872C' : '#fff')};
-  padding: 22px 32px;
+export const ProductContainer = styled.View`
   border-radius: 5px;
-  color: ${({ total }: CardProps): string => (total ? '#fff' : '#363F5F')};
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    p {
-      font-size: 16px;
-    }
-  }
-
-  h1 {
-    margin-top: 14px;
-    font-size: 36px;
-    font-weight: normal;
-    line-height: 54px;
-  }
+  margin-top: 60px;
+  flex: 1;
+  flex-direction: row;
 `;
 
-export const TableContainer = styled.section`
-  margin-top: 64px;
-
-  table {
-    width: 100%;
-    border-spacing: 0 8px;
-
-    th {
-      color: #969cb3;
-      font-weight: normal;
-      padding: 20px 32px;
-      text-align: left;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    td {
-      padding: 20px 32px;
-      border: 0;
-      background: #fff;
-      font-size: 16px;
-      font-weight: normal;
-      color: #969cb3;
-
-      &.title {
-        color: #363f5f;
-      }
-
-      &.income {
-        color: #12a454;
-      }
-
-      &.outcome {
-        color: #e83f5b;
-      }
-    }
-
-    td:first-child {
-      border-radius: 8px 0 0 8px;
-    }
-
-    td:last-child {
-      border-radius: 0 8px 8px 0;
-    }
-  }
+export const ProductList = styled(
+  FlatList as new () => FlatList<Product>,
+).attrs({
+  numColumns: 2,
+})`
+  flex: 1;
+  padding: 0 10px;
 `;
+
+export const Product = styled.View`
+  background: #fff;
+  padding: 16px 16px;
+  border-radius: 5px;
+  margin: 8px;
+  flex: 1;
+`;
+
+export const ProductImage = styled.Image`
+  height: 122px;
+  width: 122px;
+  align-self: center;
+`;
+
+export const ProductTitle = styled.Text`
+  font-size: 14px;
+  margin-top: 10px;
+`;
+
+export const PriceContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  margin-top: auto;
+`;
+
+export const ProductPrice = styled.Text`
+  font-weight: bold;
+  font-size: 16px;
+  color: #e83f5b;
+`;
+
+export const ProductButton = styled.TouchableOpacity``;
