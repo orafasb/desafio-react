@@ -734,12 +734,12 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@jest/console@^24.7.1", "@jest/console@^24.9.0":
+"@jest/console@^25.0.0", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
   integrity sha512-Zuj6b8TnKXi3q4ymac8EQfc3ea/uhLeCGThFqXeC8H9/raaH8ARPUTdId+XyGd03Z4In0/VjD2OYFcBF09fNLQ==
   dependencies:
-    "@jest/source-map" "^24.9.0"
+    "@jest/source-map" "^25.0.0"
     chalk "^2.0.1"
     slash "^2.0.0"
 
